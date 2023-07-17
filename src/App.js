@@ -14,9 +14,14 @@ function App() {
     },
   ]);
 
+  // kullanıcı ekleme fonksyionu
+  const addUser = (user) => {
+    setUsers([...users, user]);
+  };
+
   return (
-    <div className="App">
-      <UserForm />
+    <div className="p-5 d-flex flex-column gap-5">
+      <UserForm addUser={addUser} />
       <UserList users={users} />
     </div>
   );
